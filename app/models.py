@@ -4,18 +4,18 @@ from django.utils import timezone
 class Post(models.Model):
 
     title = models.CharField(
-        'Название поста',
+        'TITLE',
         max_length=128,
         null= True
     )
     brand = models.CharField(
-        'brands',
+        'BRANDS',
         max_length=128,
         null= True
 
     )
     color = models.CharField(
-        'colors',
+        'COLORS',
         max_length=128,
         null= True
     )
@@ -32,18 +32,18 @@ class Post(models.Model):
 
 
     description = models.TextField(
-        'Описание',
+        'DESCRIPTION',
         blank=True,  
         null=True    
     )
 
     created_date = models.DateField(
-        'Дата создания',
+        'CREATED_DATE',
         default=timezone.now
     )
 
     image = models.ImageField(
-        'Фото поста',
+        'FOTO POST',
         upload_to='posts-images/'
     )
     

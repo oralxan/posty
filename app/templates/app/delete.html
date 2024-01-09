@@ -1,13 +1,27 @@
 {% extends 'base.html' %}
 
+
 {% block title %}
-    Delete post '{{ delete_post.title }}'
+    Delete post '{{ postslist.title }}'
 {% endblock title %}
+{% block style %}
+
+<style>
+    body{
+        background-color: rgb(243, 243, 117);
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 150px;
+        font-size: x-large;
+    }
+
+</style>
+{% endblock style %}
 
 {% block content %}
 
-    <h1>Are you sure to delete '{{ delete_post.title }}'?</h1>
-    <form action="" method="posts" enctype="multipart/form-data">
+    <h1>Are you sure to delete '{{ postslist.title }}'?</h1>
+    <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="submit" value="Submit">
     </form>
