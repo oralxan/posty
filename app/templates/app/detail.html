@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Post
+{% endblock title %}
+
+{% block style %}
+  <style>
+    body{
+        padding: 20px;
+        background-color: rgb(223, 190, 254);
+        
+    }
+    img{
+       width: 70vh;
+    }
+    .detail-post{
+        padding: 10px; 
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+{% endblock style %}
+
+{% block content %}
+
+    <a href="{% url 'postslist' %}">Back</a>
+
+    <div class="detail-post">
+        <h1>ID: {{ post.id }}</h1>
+        <h1>Title: {{ post.title }}</h1>
+        <p>Description: {{ post.description }}</p>
+        <img src="{{ post.image.url }}" alt="">
+    </div>
+
+    <a href="{% url 'post_update' post.pk %}">Update post</a>
+    <a href="{% url 'posts' post.pk %}">Delete post</a>
+
+{% endblock content %}

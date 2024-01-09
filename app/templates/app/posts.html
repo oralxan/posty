@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}
+postss
+{% endblock title %}
+
+{% block style %}
+  <style>
+    .body{
+      background-color: rgb(245, 197, 135);
+    }
+    img{
+        max-width: 50vh;
+    }
+    .post{
+        border: 1px solid black;
+        margin: 3px 0 ;
+        background-color: rgb(208, 208, 250);
+        padding: 10px;
+        text-align: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+
+    }
+    
+  </style>
+{% endblock style %}
+
+{% block content %}
+<h1>
+    <a href="{% url 'home' %}">🏠︎</a>    
+    <a href="{% url 'post_create' %}"> 📥 </a>
+</h1>
+    
+
+    {% for post in postslist %}
+
+        <div class="post">
+            <p>ID: {{ post.id }}</p>
+            <a href="{% url 'post' post.id %}">
+                <h1>Title: {{ post.title }}</h1> 
+            </a>
+            <p>Description: {{ post.description }}</p> 
+            <p>Date: {{ post.created_date }}</p>  
+            <img src="{{ post.image.url }}" alt="">
+        </div>
+        
+            
+    {% endfor %}
+ 
+
+{% endblock content %}
