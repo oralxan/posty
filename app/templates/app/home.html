@@ -5,7 +5,7 @@
         text-decoration: none;
         color: black;
         background-color: rgb(248, 243, 102);
-        margin: 15%;
+        
     }
 </style>
 {% endblock style %}
@@ -14,9 +14,19 @@
 {% endblock title %}
 
 {% block content %}
-<div style="text-align: center; color: black; ">
+
+<div style="text-align: center; color: black; margin: 15%; ">
     <h1>Welcom</h1>
     <h1>There are cars on this site. If you want, you can put your car here.</h1>
-    <h1 ><a href="{% url 'postslist' %}">POSTS</a></h1>
+    <h1><a href="{% url 'postslist' %}">
+        <div class="d-grid gap-2">
+            <button type="button" class="btn btn-warning"><h1>POSTS</h1></button>
+        
+      </div><a></h1>
+
+          
+    </a>
 </div>
+
+
 {% endblock content %}

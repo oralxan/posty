@@ -46,6 +46,7 @@ class Post(models.Model):
         'FOTO POST',
         upload_to='posts-images/'
     )
+
     
 
     def __str__(self):

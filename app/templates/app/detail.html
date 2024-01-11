@@ -24,7 +24,7 @@
 
 {% block content %}
 
-    <a href="{% url 'postslist' %}">Back</a>
+    <a href="{% url 'postslist' %}"><button type="button" class="btn btn-outline-primary">BACK</button></a>
 
     <div class="detail-post">
         <h1>ID: {{ post.id }}</h1>
@@ -33,7 +33,7 @@
         <img src="{{ post.image.url }}" alt="">
     </div>
 
-    <a href="{% url 'post_update' post.pk %}">Update post</a>
-    <a href="{% url 'posts' post.pk %}">Delete post</a>
+    <a href="{% url 'post_update' post.pk %}"><button type="button" class="btn btn-outline-success">UPDATE_POST</button></a>
+    <a href="{% url 'posts' post.pk %}"><button type="button" class="btn btn-outline-success">DELETE_POST</button></a>
 
 {% endblock content %}

@@ -23,7 +23,8 @@
     <h1>Are you sure to delete '{{ postslist.title }}'?</h1>
     <form action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <input type="submit" value="Submit">
+        <h1><input class="btn btn-primary" type="submit" value="Submit" style="background-color: rgb(89, 38, 229); color:rgb(255, 255, 255) ;"></h1>
+        
     </form>
 
 {% endblock content %}

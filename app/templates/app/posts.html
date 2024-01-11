@@ -7,8 +7,13 @@ postss
 {% block style %}
   <style>
     body{
-      background-color: rgb(114, 104, 249);
+        margin: 0;
+        padding: 0;
+        background-color: rgb(114, 104, 249);
     }
+    
+
+    
     img{
         max-width: 50vh;
     }
@@ -21,33 +26,58 @@ postss
         font-family: Georgia, 'Times New Roman', Times, serif;
 
     }
+
     
   </style>
 {% endblock style %}
 
 {% block content %}
-<h1>
-    <a href="{% url 'home' %}">🏠</a>    
-    <a href="{% url 'post_create' %}"> 📥 </a>
-</h1>
+<nav>
+<nav class="navbar bg-dark border-bottom border-body" data-bs-theme="yellow"></nav>
+  <div class="container-fluid">
+    <h1 style="text-align: center;">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <button type="button" class="btn btn-secondary">🏠HOME🏠</button>
+      </a>
+      <a class="navbar-brand" href="{% url 'post_create' %}">
+        <button type="button" class="btn btn-secondary">📥CREATE_POST📥</button>
+      </a>
+    </h1>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-dark" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
     
 
     {% for post in postslist %}
 
-        <div class="post">
-            <h1>ID: {{ post.id }}</h1>
-            <a href="{% url 'post' post.id %}">
-                <h1>Title: {{ post.title }}</h1> 
-            </a>
-            <h3>Description: {{ post.description }}</h3> 
-            <h3>Date: {{ post.created_date }}</h3>  
-            <h3>Color:{{ post.color }}</h3>
-            <h3>Brand:{{ post.brand }}</h3>
-            <h3>Capacity:{{ post.capacity}}</h3>
-            <h3>Horse_Power:{{ post.horse_power}}</h3>
-            <h3>Price:{{ post.price }}</h3>
-            <img src="{{ post.image.url }}" alt="">
+    <div class="post">
+      <h1>ID: {{ post.id }}</h1>
+      <a href="{% url 'post' post.id %}">
+          <h1>Title: {{ post.title }}</h1> 
+      </a>
+      <h3>Color:{{ post.color }}</h3>
+      <h3>Brand:{{ post.brand }}</h3>
+      <h3>Capacity:{{ post.capacity}}</h3>
+      <h3>Horse_Power:{{ post.horse_power}}</h3>
+      <h3>Price:{{ post.price }}</h3></h5>
+      <p>Description: {{ post.description }}</p>
+      <p>Date: {{ post.created_date }}</p>  
+      <img src="{{ post.image.url }}" alt="">
+  </div>
+      
+              
+            
+        
+        
+        
+        
         </div>
+
+
+
         
             
     {% endfor %}

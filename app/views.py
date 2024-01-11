@@ -30,14 +30,14 @@ class PostCreate(CreateView):
     template_name = 'app/create.html'
     context_object_name = 'create_post'
     fields = ['title', 'description', 'image','created_date','description','price','horse_power','capacity','color','brand']
-    success_url = reverse_lazy('posts')
+    success_url = reverse_lazy('postslist')
 
 class PostUpdate(UpdateView):
     model = Post
     template_name = 'app/update.html'
     context_object_name = 'update_post'
     fields = ['title', 'description', 'image','created_date','description','price','horse_power','capacity','color','brand']
-    success_url = reverse_lazy('posts')
+    success_url = reverse_lazy('postslist')
 
 class PostDelete(DeleteView):
     model = Post
